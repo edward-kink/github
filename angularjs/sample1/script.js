@@ -17,6 +17,6 @@ function Ctrl($scope) {
   
   $scope.actionme = function(){
     console.log('value is:' + $scope.test);
-    //alert($scope.test);
+    alert($scope.test);
   };
 }
