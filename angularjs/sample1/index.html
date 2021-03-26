@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <script src="script.js"></script>
+
+  </head>
+  <body>
+
+<div ng-controller="Ctrl">
+  <select ng-model="selection" ng-options="item.type for item in items">
+  </select>
+  <tt>selection={{selection}}</tt>
+  <hr/>
+  <div>
+    <ul>
+		  <li ng-repeat="op in options"><a style="line-height: 13px;" title="{{op.title}}" tabindex="-1" href ng-click="selectSearchType(op)">{{op.title}}</a></li>
+		</ul>
+    
+  </div>
+  
+  
+  <span class="pew"  ng-switch on="searchType.type" >
+    <div class="pew" ng-switch-when="title1">Settings Div</div>
+    <span class="pew"  ng-switch-when="title2"><input ng-model="test" placeholder="pre" type="text" />{{test}}</span>
+    <span class="pew"  ng-switch-default>default</span>
+  </span>
+  
+  <button ng-click="actionme()">click</button>
+  
+</div>
+
+
+
+  </body>
+</html>

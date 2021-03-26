@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="mainApp">
+
+<head>
+  <style>
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    td,
+    th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    body {
+      background-color: lightblue;
+    }
+    
+    active {
+      background-color: orange;
+    }
+  </style>
+  <script src="https://code.angularjs.org/1.2.18/angular.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+  <script src="example.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container" ng-controller="TableFilterController">
+    <table class="table table-hover">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Role</th>
+      </tr>
+      <tr ng-repeat="p in details " ng-class="{active : isSelected(p)}">
+        <td>{{ $index + 1 }}</td>
+        <td><a ng-click="clickMe(p)">{{p.name}}</a></td>
+        <td>{{p.age}}</td>
+        <td>{{p.mass}}</td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+</body>
+
+</html>
